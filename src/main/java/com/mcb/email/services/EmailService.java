@@ -12,6 +12,8 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class EmailService {
 
@@ -24,6 +26,7 @@ public class EmailService {
 
 
 
+	@Transactional
 	public EmailModel sendEmail(EmailModel emailModel) {
 		emailModel.setSendDateEmail(LocalDateTime.now());
 

@@ -2,6 +2,7 @@ package com.mcb.email.entities;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 import com.mcb.email.enums.StatusEmail;
 
@@ -18,8 +19,8 @@ public class EmailModel implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	@GeneratedValue(strategy = GenerationType.UUID)
+	private UUID id;
 	private String ownerRef;
 	private String emailFrom;
 	private String emailTo;
@@ -31,11 +32,11 @@ public class EmailModel implements Serializable {
 	private LocalDateTime sendDateEmail;
 	private StatusEmail statusEmail;
 
-	public Long getId() {
+	public UUID getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(UUID id) {
 		this.id = id;
 	}
 
